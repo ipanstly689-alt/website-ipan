@@ -80,6 +80,58 @@ nav a:hover {
     transform: scale(1.1) rotate(5deg);
 }
 
+.tagline {
+    font-size: 1.3em;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    animation: fadeIn 1s ease-out 0.4s both;
+}
+
+.info-box {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    animation: slideUp 0.8s ease-out 0.5s both;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.info-box p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    animation: fadeIn 1s ease-out 0.7s both;
+}
+
+.skill-tag {
+    background: rgba(255,255,255,0.25);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: white;
+    color: #764ba2;
+    transform: scale(1.1);
+}
+
 .btn {
     display: inline-block;
     padding: 15px 30px;
@@ -92,7 +144,7 @@ nav a:hover {
     font-size: 1.1em;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    animation: bounceIn 1s ease-out 0.5s both;
+    animation: bounceIn 1s ease-out 0.9s both;
 }
 
 @keyframes bounceIn {
@@ -107,12 +159,6 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     background: #f0f0f0;
 }
-
-p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    animation: fadeIn 1s ease-out 0.3s both;
-}
 </style>
 </head>
 <body>
@@ -123,9 +169,24 @@ p {
 </nav>
 <img src="https://picsum.photos/150" alt="Foto Profil" class="profile-pic">
 <h1>Tentang Aku</h1>
-<p>Nama: Ipan</p>
-<p>Hobi: Coding & Belajar Hal Baru</p>
-<p>Website ini dibuat pakai Termux di HP!</p>
+<p class="tagline">"Self-taught developer yang belajar coding langsung dari HP!" 🚀</p>
+
+<div class="info-box">
+    <p><strong>👨‍💻 Nama:</strong> Ipan-dev</p>
+    <p><strong>🎯 Hobi:</strong> Ngoprek kode, eksplorasi teknologi baru, dan bikin project keren yang belum pernah ada sebelumnya!</p>
+    <p><strong>💡 Motto:</strong> "Tidak ada yang tidak mungkin kalau mau belajar!"</p>
+    <p><strong>🌟 Fakta Unik:</strong> Website ini 100% dibuat dari HP pakai Termux — tanpa laptop, tanpa PC, cuma semangat dan kuota! 🔥</p>
+</div>
+
+<div class="skills">
+    <span class="skill-tag">🌐 HTML</span>
+    <span class="skill-tag"> CSS</span>
+    <span class="skill-tag">⚙️ Termux</span>
+    <span class="skill-tag">🐙 Git & GitHub</span>
+    <span class="skill-tag">🐍 Python (Belajar)</span>
+    <span class="skill-tag">📱 Mobile Dev</span>
+</div>
+
 <a href="contact.html" class="btn">Hubungi Aku</a>
 </body>
 </html>
