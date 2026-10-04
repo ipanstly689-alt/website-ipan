@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
+<title>Home - Ipan-dev</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    text-align: center;
-    padding: 50px;
     font-family: sans-serif;
     min-height: 100vh;
-    animation: fadeIn 1s ease-in;
+    overflow-x: hidden;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    animation: slideDown 0.8s ease-out;
+nav {
+    background: rgba(255,255,255,0.15);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    animation: slideDown 0.6s ease-out;
 }
 
 @keyframes slideDown {
@@ -31,20 +29,11 @@ h1 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-nav {
-    background: rgba(255,255,255,0.2);
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    backdrop-filter: blur(10px);
-    animation: slideDown 0.6s ease-out;
-}
-
 nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding: 8px 16px;
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -58,6 +47,47 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: slideDown 0.8s ease-out;
+}
+
+.typing {
+    font-size: 1.3em;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+    font-style: italic;
+    border-right: 3px solid white;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.hero p {
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
 .btn {
     display: inline-block;
     padding: 15px 30px;
@@ -65,12 +95,12 @@ nav a:hover {
     color: #667eea;
     text-decoration: none;
     border-radius: 50px;
-    margin-top: 20px;
     font-weight: bold;
     font-size: 1.1em;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    animation: bounceIn 1s ease-out 0.5s both;
+    margin: 5px;
+    animation: bounceIn 1s ease-out 0.8s both;
 }
 
 @keyframes bounceIn {
@@ -83,28 +113,203 @@ nav a:hover {
 .btn:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    background: #f0f0f0;
 }
 
-.btn:active {
-    transform: translateY(-2px) scale(1.02);
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
 }
 
-p {
-    font-size: 1.1em;
+.btn-outline:hover {
+    background: white;
+    color: #667eea;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 20px;
+    margin: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-out 1s both;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #f0f0f0;
+    margin-top: 5px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin: 40px 0 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: slideUp 0.8s ease-out both;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.project-card h3 {
+    font-size: 1.3em;
     margin-bottom: 10px;
-    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.project-card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.project-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease-out 1.2s both;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    transform: scale(1.3) translateY(-5px);
 }
 </style>
 </head>
 <body>
+
 <nav>
     <a href="index.html">🏠 Home</a>
     <a href="about.html"> About</a>
     <a href="contact.html">📧 Contact</a>
 </nav>
-<h1>Selamat Datang!</h1>
-<p>Ini halaman utama website pertamaku.</p>
-<a href="about.html" class="btn">Kenalan Yuk!</a>
+
+<div class="hero">
+    <h1>Halo, Saya Ipan-dev! 👋</h1>
+    <p class="typing">Self-taught Developer from Indonesia 🇮🇩</p>
+    <p>Saya belajar coding langsung dari HP pakai Termux. Tanpa laptop, tanpa PC — cuma semangat, kuota, dan tekad untuk bisa! 🔥</p>
+    <a href="about.html" class="btn">Kenalan Yuk!</a>
+    <a href="contact.html" class="btn btn-outline">Hubungi Saya</a>
+</div>
+
+<div class="stats">
+    <div class="stat-item">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Halaman Website</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Skills Dipelajari</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Dibuat dari HP</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Semangat Belajar</div>
+    </div>
+</div>
+
+<h2 class="section-title">🚀 Yang Sedang Saya Pelajari</h2>
+
+<div class="projects">
+    <div class="project-card">
+        <div class="project-icon">🌐</div>
+        <h3>HTML & CSS</h3>
+        <p>Membuat website responsive dengan desain modern dan animasi keren.</p>
+    </div>
+    <div class="project-card">
+        <div class="project-icon">📱</div>
+        <h3>Termux</h3>
+        <p>Ngoding langsung dari HP Android tanpa perlu laptop atau PC.</p>
+    </div>
+    <div class="project-card">
+        <div class="project-icon">🐙</div>
+        <h3>Git & GitHub</h3>
+        <p>Version control dan hosting website gratis untuk semua orang.</p>
+    </div>
+</div>
+
+<footer>
+    <p><strong>© 2026 Ipan-dev</strong></p>
+    <p>Dibuat dengan ❤️ dari HP Android</p>
+    <div class="social-links">
+        <a href="#">📧</a>
+        <a href="#">📸</a>
+        <a href="#">💬</a>
+        <a href="#">🐙</a>
+    </div>
+</footer>
+
 </body>
 </html>

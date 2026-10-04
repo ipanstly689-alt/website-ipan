@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Contact</title>
+<title>Contact - Ipan-dev</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -9,7 +10,7 @@ body {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     color: white;
     text-align: center;
-    padding: 50px;
+    padding: 50px 20px;
     font-family: sans-serif;
     min-height: 100vh;
     animation: fadeIn 1s ease-in;
@@ -22,13 +23,20 @@ body {
 
 h1 {
     font-size: 3em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     animation: slideDown 0.8s ease-out;
 }
 
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+    animation: fadeIn 1s ease-out 0.3s both;
 }
 
 nav {
@@ -43,8 +51,8 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2em;
+    margin: 0 10px;
+    font-size: 1.1em;
     padding: 8px 16px;
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -58,15 +66,28 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+.contact-links {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .contact-item {
-    background: rgba(255,255,255,0.15);
-    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.2);
+    padding: 20px 25px;
     border-radius: 15px;
-    margin: 15px auto;
-    max-width: 400px;
     backdrop-filter: blur(10px);
+    text-decoration: none;
+    color: white;
     transition: all 0.3s ease;
     animation: slideUp 0.6s ease-out both;
+    border: 2px solid transparent;
 }
 
 @keyframes slideUp {
@@ -74,19 +95,33 @@ nav a:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.contact-item:nth-child(1) { animation-delay: 0.2s; }
-.contact-item:nth-child(2) { animation-delay: 0.4s; }
-.contact-item:nth-child(3) { animation-delay: 0.6s; }
+.contact-item:nth-child(1) { animation-delay: 0.3s; }
+.contact-item:nth-child(2) { animation-delay: 0.5s; }
 
 .contact-item:hover {
     transform: translateY(-5px) scale(1.02);
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.3);
+    border-color: white;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.contact-item p {
+.contact-icon {
+    font-size: 2em;
+}
+
+.contact-text {
+    text-align: left;
+}
+
+.contact-text strong {
+    display: block;
     font-size: 1.1em;
-    margin: 0;
+    margin-bottom: 3px;
+}
+
+.contact-text span {
+    font-size: 0.9em;
+    color: #f0f0f0;
 }
 
 .btn {
@@ -96,7 +131,7 @@ nav a:hover {
     color: #f093fb;
     text-decoration: none;
     border-radius: 50px;
-    margin-top: 20px;
+    margin-top: 30px;
     font-weight: bold;
     font-size: 1.1em;
     transition: all 0.3s ease;
@@ -116,18 +151,46 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     background: #f0f0f0;
 }
+
+.footer-note {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #f0f0f0;
+    animation: fadeIn 1s ease-out 1s both;
+}
 </style>
 </head>
 <body>
+
 <nav>
     <a href="index.html">🏠 Home</a>
     <a href="about.html">👤 About</a>
-    <a href="contact.html"> Contact</a>
+    <a href="contact.html">📧 Contact</a>
 </nav>
+
 <h1>Hubungi Aku</h1>
-<div class="contact-item"><p>📧 Email: ipan@email.com</p></div>
-<div class="contact-item"><p>📸 Instagram: @ipan</p></div>
-<div class="contact-item"><p>💬 WhatsApp: 0812-xxxx-xxxx</p></div>
+<p class="subtitle">Mau ngobrol, kolaborasi, atau sekadar say hi? Klik salah satu di bawah! 👇</p>
+
+<div class="contact-links">
+    <a href="https://www.instagram.com/ipansukamie?stkn=d205Nnp3ZzF6bm5t" target="_blank" class="contact-item">
+        <span class="contact-icon">📸</span>
+        <div class="contact-text">
+            <strong>Instagram</strong>
+            <span>@ipansukamie — Klik untuk buka profil</span>
+        </div>
+    </a>
+    <a href="https://whatsapp.com/channel/0029Vb9N4YS7tkjC1K9POI0M" target="_blank" class="contact-item">
+        <span class="contact-icon">💬</span>
+        <div class="contact-text">
+            <strong>Saluran WhatsApp</strong>
+            <span>Join saluran untuk update terbaru!</span>
+        </div>
+    </a>
+</div>
+
 <a href="index.html" class="btn">Kembali ke Home</a>
+
+<p class="footer-note">✨ Terima kasih sudah mampir di website-ku!</p>
+
 </body>
 </html>
