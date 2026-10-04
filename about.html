@@ -3,15 +3,125 @@
 <head>
 <title>About</title>
 <style>
-body{background:#764ba2;color:white;text-align:center;padding:50px;font-family:sans-serif;}
-h1{font-size:3em;}
-nav{background:#667eea;padding:15px;border-radius:10px;margin-bottom:30px;}
-nav a{color:white;text-decoration:none;margin:0 15px;font-size:1.2em;}
-.btn{display:inline-block;padding:15px 30px;background:white;color:#764ba2;text-decoration:none;border-radius:50px;margin-top:20px;font-weight:bold;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-family: sans-serif;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.6s ease-out;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: white;
+    color: #764ba2;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite, fadeIn 1s ease-out 0.2s both;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+.profile-pic:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: white;
+    color: #764ba2;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: bounceIn 1s ease-out 0.5s both;
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background: #f0f0f0;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-out 0.3s both;
+}
 </style>
 </head>
 <body>
-<nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+<nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">👤 About</a>
+    <a href="contact.html">📧 Contact</a>
+</nav>
+<img src="https://picsum.photos/150" alt="Foto Profil" class="profile-pic">
 <h1>Tentang Aku</h1>
 <p>Nama: Ipan</p>
 <p>Hobi: Coding & Belajar Hal Baru</p>

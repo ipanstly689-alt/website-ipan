@@ -3,19 +3,131 @@
 <head>
 <title>Contact</title>
 <style>
-body{background:#f093fb;color:white;text-align:center;padding:50px;font-family:sans-serif;}
-h1{font-size:3em;}
-nav{background:#667eea;padding:15px;border-radius:10px;margin-bottom:30px;}
-nav a{color:white;text-decoration:none;margin:0 15px;font-size:1.2em;}
-.btn{display:inline-block;padding:15px 30px;background:white;color:#f093fb;text-decoration:none;border-radius:50px;margin-top:20px;font-weight:bold;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-family: sans-serif;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.6s ease-out;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: white;
+    color: #f093fb;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.contact-item {
+    background: rgba(255,255,255,0.15);
+    padding: 15px 25px;
+    border-radius: 15px;
+    margin: 15px auto;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: slideUp 0.6s ease-out both;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-item:nth-child(1) { animation-delay: 0.2s; }
+.contact-item:nth-child(2) { animation-delay: 0.4s; }
+.contact-item:nth-child(3) { animation-delay: 0.6s; }
+
+.contact-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.contact-item p {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: white;
+    color: #f093fb;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: bounceIn 1s ease-out 0.8s both;
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background: #f0f0f0;
+}
 </style>
 </head>
 <body>
-<nav><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+<nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">👤 About</a>
+    <a href="contact.html"> Contact</a>
+</nav>
 <h1>Hubungi Aku</h1>
-<p>Email: ipan@email.com</p>
-<p>Instagram: @ipan</p>
-<p>WhatsApp: 0812-xxxx-xxxx</p>
+<div class="contact-item"><p>📧 Email: ipan@email.com</p></div>
+<div class="contact-item"><p>📸 Instagram: @ipan</p></div>
+<div class="contact-item"><p>💬 WhatsApp: 0812-xxxx-xxxx</p></div>
 <a href="index.html" class="btn">Kembali ke Home</a>
 </body>
 </html>
