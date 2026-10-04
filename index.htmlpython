@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><head><title>Website Pertamaku</title><style>body{background:#667eea;color:white;text-align:center;padding:50px;font-family:sans-serif;}h1{font-size:3em;}</style></head><body><h1>Halo Dunia!</h1><p>Ini website pertamaku.</p></body></html> -m http.server 8080
